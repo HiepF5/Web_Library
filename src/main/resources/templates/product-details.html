@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<!-- Title  -->
+<title>Thu Vien Online || Product Detail</title>
+<style>
+.rating-color {
+	color: orange; /* Replace with your desired color value */
+}
+
+.nocheck {
+	color: black;
+}
+.mysize {
+	width: 800px;
+}
+</style>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<!-- Favicon  -->
+<link rel="icon" href="../../images/img.png">
+
+<!-- Core Style CSS -->
+<link rel="stylesheet" href="../../css/core-style.css">
+<link rel="stylesheet" href="../../style.css">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+<link rel="icon" type="image/png"
+	href="../../images/img.png" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../vendor_comment/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../fonts_comment/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../fonts_comment/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../fonts_comment/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../vendor_comment/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../vendor_comment/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../vendor_comment/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../vendor_comment/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../vendor_comment/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../vendor_comment/slick/slick.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../vendor_comment/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="../../vendor_comment/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="../../css_comment/util.css">
+<link rel="stylesheet" type="text/css" href="../../css_comment/main.css">
+</head>
+
+<body>
+
+	<!-- Search Wrapper Area End -->
+
+	<!-- ##### Main Content Wrapper Start ##### -->
+	<div class="main-content-wrapper d-flex clearfix">
+
+		<!-- Mobile Nav (max width 767px)-->
+		<div class="mobile-nav">
+			<!-- Navbar Brand -->
+			<div class="amado-navbar-brand">
+				<a href="index.html"><img src="../../images/img.png"
+					alt=""></a>
+			</div>
+			<!-- Navbar Toggler -->
+			<div class="amado-navbar-toggler">
+				<span></span><span></span><span></span>
+			</div>
+		</div>
+
+		<!-- Header Area Start -->
+		<header class="header-area clearfix">
+			<!-- Close Icon -->
+			<div class="nav-close">
+				<i class="fa fa-close" aria-hidden="true"></i>
+			</div>
+			<!-- Logo -->
+			<div class="logo">
+				<a href="index.html"><img src="../../images/img.png"
+					alt=""></a>
+			</div>
+			<!-- Amado Nav -->
+			<nav class="amado-nav">
+				<ul>
+					<li><a href="/view/shop">Home</a></li>
+					<li><a href="/view/shop">Shop</a></li>
+					<li class="active"><a href="/view/shop">Product</a></li>
+					<li><a href="/view/cart">Cart</a></li>
+
+				</ul>
+			</nav>
+			<!-- Button Group -->
+			<div class="amado-btn-group mt-30 mb-100"></div>
+			<!-- Cart Menu -->
+			<div class="cart-fav-search mb-100">
+				<a href="/view/cart" class="cart-nav"><img
+					src="../../img/core-img/cart.png" alt=""> Cart <span
+					id="cartCount">(0)</span></a> <span th:if="${username}"
+					class="search-nav"> <i
+					class="fa fa-user-circle-o pr-2 fa-lg" aria-hidden="true"></i>
+					[[${username}]]
+				</span> <a th:if="${username}" th:href="@{/logout}"><i
+					class="fa fa-sign-out pr-2 fa-lg" aria-hidden="true"></i> LogOut </a> <a
+					th:unless="${username}" th:href="@{/login}"><i
+					class="fa fa-user-circle-o pr-3 fa-lg" aria-hidden="true"></i>Login</a>
+				<a th:unless="${username}" th:href="@{/register}"><i
+					class="fa fa-registered pr-2 fa-lg" aria-hidden="true"></i>
+					Register </a>
+			</div>
+			<!-- Social Button -->
+			<div class="social-info d-flex justify-content-between">
+				<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a> <a
+					href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a
+					href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a
+					href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			</div>
+		</header>
+		<!-- Header Area End -->
+
+		<!-- Product Details Area Start -->
+		<div class="single-product-area section-padding-100 clearfix">
+			<div class="container-fluid">
+
+
+
+				<div class="row mysize" id="product-detail"></div>
+			</div>
+		</div>
+		<!-- Product Details Area End -->
+	</div>
+
+	<section class="sec-product-detail bg0 p-t-65 p-b-60">
+		<div class="container">
+			<div class="bor10 m-t-50 p-t-43 p-b-40">
+				<!-- Tab01 -->
+				<div class="tab01">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="nav-item p-b-10"><a class="nav-link active"
+							data-toggle="tab" href="#reviews" role="tab">Reviews (1)</a></li>
+						<li class="nav-item p-b-10"><a class="nav-link "
+							data-toggle="tab" href="#description" role="tab">Description</a></li>
+					</ul>
+
+
+
+					<!-- Tab panes -->
+					<div class="tab-content p-t-43">
+						<!-- - -->
+
+						<!-- - -->
+
+						<div class="tab-pane fade show" id="description" role="tabpanel">
+							<div class="how-pos2 p-lr-15-md">
+								<p class="stext-102 cl6" id="description_area"></p>
+							</div>
+						</div>
+						<!-- - -->
+						<div class="tab-pane fade show active" id="reviews"
+							role="tabpanel">
+							<div class="row">
+								<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+									<div class="p-b-30 m-lr-15-sm">
+										<!-- Review -->
+										<div class="flex-w flex-t p-b-68" id="comment"></div>
+
+
+										<!-- Add review -->
+										<form class="w-full">
+											<h5 class="mtext-108 cl2 p-b-7">Add a review</h5>
+
+
+
+											<div class="flex-w flex-m p-t-50 p-b-23">
+												<span class="stext-102 cl3 m-r-16"> Your Rating </span> <span
+													class="wrap-rating fs-18 cl11 pointer"> <i
+													class="item-rating pointer zmdi zmdi-star-outline"></i> <i
+													class="item-rating pointer zmdi zmdi-star-outline"></i> <i
+													class="item-rating pointer zmdi zmdi-star-outline"></i> <i
+													class="item-rating pointer zmdi zmdi-star-outline"></i> <i
+													class="item-rating pointer zmdi zmdi-star-outline"></i> <input
+													class="dis-none" type="number" name="rating">
+												</span>
+											</div>
+
+											<div class="row p-b-25">
+												<div class="col-12 p-b-5">
+													<label class="stext-102 cl3" for="review">Your
+														review</label>
+													<textarea
+														class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10"
+														id="review" name="review"></textarea>
+												</div>
+
+
+											</div>
+											<button
+												class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10"
+												th:attr="onclick='addComment(\'' + ${id} + '\', \'' + ${userId} + '\');'">
+												Submit</button>
+
+										</form>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</section>
+
+
+	<!-- ##### Main Content Wrapper End ##### -->
+
+	<!-- ##### Newsletter Area Start ##### -->
+
+	<!-- ##### Newsletter Area End ##### -->
+
+	<!-- ##### Footer Area Start ##### -->
+
+	<!-- ##### Footer Area End ##### -->
+
+	<!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+	<script src="../../js/jquery/jquery-2.2.4.min.js"></script>
+	<!-- Popper js -->
+	<script src="../../js/popper.min.js"></script>
+	<!-- Bootstrap js -->
+	<script src="../../js/bootstrap.min.js"></script>
+	<!-- Plugins js -->
+	<script src="../../js/plugins.js"></script>
+	<!-- Active js -->
+	<script src="../../js/active.js"></script>
+
+	<script th:src="@{/Myjs/product.js}"></script>
+	<script th:src="@{/Myjs/Comment.js}"></script>
+	<script th:src="@{/Myjs/cart.js}"></script>
+	<script src="../../vendor_comment/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="../../vendor_comment/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="../../vendor_comment/bootstrap/js/popper.js"></script>
+	<script src="../../vendor_comment/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="../../vendor_comment/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="../../vendor_comment/daterangepicker/moment.min.js"></script>
+	<script src="../../vendor_comment/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="../../vendor_comment/slick/slick.min.js"></script>
+	<script src="../../js_comment/slick-custom.js"></script>
+	<!--===============================================================================================-->
+	<script src="../../vendor_comment/parallax100/parallax100.js"></script>
+	<script>
+		$('.parallax100').parallax100();
+	</script>
+	<!--===============================================================================================-->
+	<script
+		src="../../vendor_comment/MagnificPopup/jquery.magnific-popup.min.js"></script>
+
+	<!--===============================================================================================-->
+	<script src="../../vendor_comment/isotope/isotope.pkgd.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="../../vendor_comment/sweetalert/sweetalert.min.js"></script>
+
+	<!--===============================================================================================-->
+	<script
+		src="../../vendor_comment/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+	<!--===============================================================================================-->
+	<script src="../../js_comment/main.js"></script>
+	<script> getProduct([[${id}]])
+  
+    </script>
+	<script> getCommentByProductId([[${id}]])
+  
+    </script>
+
+	<script>
+		 var spanElement = document.querySelector(".wrap-rating");
+		
+		 // Function to count the <i> elements with the specified class
+		 function countElements() {
+		   var iElements = spanElement.querySelectorAll("i.item-rating.pointer.zmdi.zmdi-star");
+		   var count = iElements.length;
+
+		   console.log("Number of <i> elements with the specified class: " + count);
+		   setStar(count);
+		 }
+		
+		 
+		 countElements();
+		
+		 
+		 var observer = new MutationObserver(function(mutations) {
+		   
+		   countElements();
+		 });
+		
+		 var config = { attributes: true, childList: true, subtree: true };
+		
+		 observer.observe(spanElement, config);
+    </script>
+	<script th:inline="javascript">
+
+			var username = /*[[${username}]]*/
+			function check(event) {
+				if (username == null) {
+					Swal.fire({
+						title : 'Notification',
+						text : 'You need to login first',
+						icon : 'warning',
+						confirmButtonColor : '#3085d6',
+						confirmButtonText : 'OK'
+					});
+					event.preventDefault();
+					return false;
+				}
+				return true;
+			}
+		</script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+
+</html>

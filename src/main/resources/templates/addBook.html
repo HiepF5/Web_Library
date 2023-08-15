@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Thu Vien Online || Add Book</title>
+<!-- base:css -->
+<link rel="stylesheet" href="../../vendors/typicons/typicons.css">
+<link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+<!-- endinject -->
+<!-- plugin css for this page -->
+<link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+<link rel="stylesheet"
+	href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+<!-- End plugin css for this page -->
+<!-- inject:css -->
+<link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+<!-- endinject -->
+<link rel="shortcut icon" href="../../images/favicon.png" />
+</head>
+
+
+<body>
+	<div class="container-scroller">
+		<!-- partial:../../partials/_navbar.html -->
+
+		<!-- partial -->
+		<div class="container-fluid page-body-wrapper">
+			<!-- partial:../../partials/_settings-panel.html -->
+			<div class="theme-setting-wrapper">
+				<div id="settings-trigger">
+					<i class="typcn typcn-cog-outline"></i>
+				</div>
+				<div id="theme-settings" class="settings-panel">
+					<i class="settings-close typcn typcn-times"></i>
+					<p class="settings-heading">SIDEBAR SKINS</p>
+					<div class="sidebar-bg-options selected" id="sidebar-light-theme">
+						<div class="img-ss rounded-circle bg-light border mr-3"></div>
+						Light
+					</div>
+					<div class="sidebar-bg-options" id="sidebar-dark-theme">
+						<div class="img-ss rounded-circle bg-dark border mr-3"></div>
+						Dark
+					</div>
+					<p class="settings-heading mt-2">HEADER SKINS</p>
+					<div class="color-tiles mx-0 px-4">
+						<div class="tiles success"></div>
+						<div class="tiles warning"></div>
+						<div class="tiles danger"></div>
+						<div class="tiles info"></div>
+						<div class="tiles dark"></div>
+						<div class="tiles default"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- partial -->
+			<!-- partial:../../partials/_sidebar.html -->
+			<nav class="sidebar sidebar-offcanvas" id="sidebar">
+				<ul class="nav">
+					<li class="nav-item"><a class="nav-link"
+						href="/bookManagement"> <i
+							class="typcn typcn-device-desktop menu-icon"></i> <span
+							class="menu-title">Book Management</span>
+
+					</a></li>
+
+				</ul>
+			</nav>
+			<!-- partial -->
+			<div class="main-panel">
+				<div class="content-wrapper">
+					<div class="row">
+
+
+						<div class="col-12 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title">Book Information</h4>
+									<p class="card-description">Book Information</p>
+									<form class="forms-sample">
+										<div class="row">
+											<div class="col-6 row">
+
+												<div class="form-group col-6">
+													<label for="exampleInputName1">Title</label> <input
+														type="text" class="form-control" id="bookTitle"
+														placeholder="Name" th:disabled="${modelbookID > 0}">
+												</div>
+
+												<div class="form-group col-6">
+													<label>Author</label> <input type="text"
+														class="form-control" id="bookAuthor" placeholder="Author"
+														th:disabled="${modelbookID > 0}">
+												</div>
+
+												<div class="form-group col-12 ">
+													<label>Description</label>
+													<textarea class="form-control" id="Description"
+														placeholder="Description" rows=10
+														th:disabled="${modelbookID> 0}"></textarea>
+												</div>
+
+
+												<div class="form-group col-6">
+													<label for="exampleInputEmail3">PageNum</label> <input
+														type="text" class="form-control" id="pagenum"
+														placeholder="PageNum" th:disabled="${modelbookID > 0}">
+												</div>
+												<div class="form-group col-6">
+													<label>Publication Date</label> <input type="text"
+														class="form-control" id="publicationDate"
+														placeholder="publicationDate"
+														th:disabled="${modelbookID > 0}">
+												</div>
+
+												<div class="form-group col-6">
+													<label>Category</label>
+													<div>
+														<select style="width: 100%" id="categorySelection"
+															th:disabled="${modelbookID > 0}">
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="form-group">
+													<label>Image</label> <input type="file" name="img[]"
+														class="file-upload-default" onchange="getImg()"
+														id="uploadImg" th:disabled="${modelbookID > 0}">
+													<div class="input-group col-xs-12">
+														<input type="text" class="form-control file-upload-info"
+															placeholder="Upload Image"> <span
+															class="input-group-append">
+															<button class="file-upload-browse btn btn-primary"
+																type="button">Upload</button>
+														</span>
+													</div>
+												</div>
+												<div class="form-group">
+													<label>Preview</label>
+													<div style="width: 250px;">
+														<img style="width: 100%; height: 100%;" id="img" src="">
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- 	<div class="col-lg-6">
+											<div class="form-group">
+												<label>Image</label> <input id="uploadImg"
+													onchange="getImg()" type="file" required />
+											</div>
+											<div class="form-group">
+												<label>Preview</label>
+												<div style="width: 250px;">
+													<img style="width: 100%; height: 100%;" id="img" src="">
+												</div>
+											</div>
+										</div> -->
+
+
+
+										<!-- 	<button id="addBook" type="submit"
+											class="btn btn-primary mr-2">Submit</button> -->
+
+										<button class="btn btn-light">Cancel</button>
+									</form>
+									<button id="addBook" type="submit" class="btn btn-primary mr-2">
+										<span id="buttonText"
+											th:text="${modelbookID == 0 ? 'Add' : 'Edit'}"></span>
+									</button>
+
+								</div>
+							</div>
+
+
+						</div>
+
+
+						<!-- page-body-wrapper ends -->
+					</div>
+					<!-- container-scroller -->
+					<!-- base:js -->
+					<script src="../../vendors/js/vendor.bundle.base.js"></script>
+					<!-- endinject -->
+					<!-- inject:js -->
+					<script src="../../js/off-canvas.js"></script>
+					<script src="../../js/hoverable-collapse.js"></script>
+					<script src="../../js/template.js"></script>
+					<script src="../../js/settings.js"></script>
+					<script src="../../js/todolist.js"></script>
+					<!-- endinject -->
+					<!-- plugin js for this page -->
+					<script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+					<script src="../../vendors/select2/select2.min.js"></script>
+					<!-- End plugin js for this page -->
+					<!-- Custom js for this page-->
+					<script src="../../js/file-upload.js"></script>
+					<script src="../../js/typeahead.js"></script>
+					<script src="../../js/select2.js"></script>
+					<script th:src="@{/Myjs/AdminManagement.js}"></script>
+					<!-- End custom js for this page-->
+					<!-- <script> 
+						var modelbookID = /*[[${modelbookID}]]*/;
+						
+				</script> -->
+					<script>
+						function confirmCreateBook(){
+						    var buttonText = document.getElementById("buttonText").innerText;
+
+						    if (buttonText === "Add") {
+						        var confirmCreate = confirm("Are you sure you want to create this book?");
+						        
+						        if (!confirmCreate) {
+						            return; // Stop further execution if the user cancels
+						        }
+						    }
+						}
+					</script>
+
+					<script th:inline="javascript">
+							console.log('aaa',document.getElementById('Description'))
+							var modelbookID = /*[[${modelbookID}]]*/
+							console.log(modelbookID)
+					  		if(modelbookID !==0){
+								getProductById(modelbookID);
+							}
+							
+							if(modelbookID == 0){
+								console.log('disable')
+								document.getElementById('addBook').addEventListener('click',(e)=>{
+								    e.preventDefault();
+							        const bookTitle = document.getElementById("bookTitle").value;
+							        const author = document.getElementById("bookAuthor").value
+							        const pageNum = document.getElementById("pagenum").value;
+							        const publicationDate = document.getElementById("publicationDate").value
+							        
+							        const select = document.getElementById('categorySelection');
+							        const category = select.options[select.selectedIndex].value;
+							        const image = document.getElementById("uploadImg").files[0];
+							        let description = document.getElementById('Description').value;
+							        
+							       	if(bookTitle == ''){
+							       		alert("Book Title Can Not Be Null")
+							       		e.preventDefault();
+							       		return
+							       	}
+							        
+							       	if(pageNum == ''){
+							       		alert("PageNum Can Not Be Null")
+							       		e.preventDefault();
+							       		return
+							       	} 
+							       	
+							       	if(isNaN(pageNum)){
+							       		alert("PageNum Have To Be A Number");
+							       		e.preventDefault();
+							       		return;
+							       	}
+							       	
+							       	if(author == ''){
+							       		alert("Author Can Not Be Null")
+							       		e.preventDefault();
+							       		return
+							       	} 
+							       	
+									var datePattern = /^\d{2}-\d{2}-\d{4}$/;
+									if (!datePattern.test(publicationDate)) {
+										alert("Publication Date must be in the format dd-mm-yyyy!");
+										event.preventDefault(); // Prevent form submission
+										return;
+									}
+									if (image == undefined){
+										alert("Please Choose An Image For This Book");
+										event.preventDefault(); // Prevent form submission
+										return 
+									}
+							      
+							        const formData = new FormData();
+							        formData.append('bookTitle',bookTitle);
+							        formData.append('author' , author);
+							        formData.append('pageNum',pageNum);
+							        formData.append('category',category);
+							
+							        formData.append('image' , image);
+							        formData.append('publicationDate' , publicationDate);
+							        formData.append('Description' , description);
+							        
+							        var confirmCreate = confirm("Are you sure you want to create this book?");
+							        
+							        if (!confirmCreate) {
+							            return; // Stop further execution if the user cancels
+							        }
+							        fetch('http://localhost:8080/book', {
+							            method : "post" ,
+							            body : formData
+							        })
+							            .then((response) => {
+							                return response.json();
+							            })
+							            .then((data) => {
+							                if(data.bookID === undefined){
+							                	alert(data.message)
+							                    document.getElementById("error").innerText = data.message;
+							                	
+							                }
+							                else{
+							                    console.log('ok')
+							                  /*   document.getElementById("addEmployeeModal").style.display = "none";
+							                    document.querySelector(".modal-backdrop").style.display = "none"; */
+							                    alert("Succesfully Add A New Book!")
+										        window.location.href = "/bookManagement";
+							                }
+							            })
+							        
+								})
+							}else{
+							   document.getElementById('addBook').addEventListener('click', function() {
+							            enableEditFields();
+							            var addButton = document.getElementById("addBook");
+							            if (addButton){
+							            	enableEditFields()
+								            addButton.setAttribute("id", "editBook");
+								            document.getElementById("buttonText").innerText = "Save";
+								            
+								        	document.getElementById('editBook').addEventListener('click' , (e) => {
+										    	
+										        e.preventDefault();
+										        const formData = new FormData();
+										        let bookTitle = document.getElementById('bookTitle').value;
+										        let PageNum = document.getElementById('pagenum').value;
+										        let Author = document.getElementById('bookAuthor').value;
+										        const select = document.getElementById('categorySelection');
+										        const cate = select.options[select.selectedIndex].value;
+										        const image = document.getElementById('uploadImg').files[0];
+										        let description = document.getElementById('Description').value;
+										        let publicationDate = document.getElementById('publicationDate').value;
+
+										       	if(bookTitle == ''){
+										       		alert("Book Title Can Not Be Null")
+										       		e.preventDefault();
+										       		return
+										       	}
+										        
+										       	if(PageNum == ''){
+										       		alert("PageNum Can Not Be Null")
+										       		e.preventDefault();
+										       		return
+										       	} 
+										       	
+										       	if(isNaN(PageNum)){
+										       		alert("PageNum Have To Be A Number");
+										       		e.preventDefault();
+										       		return;
+										       	}
+										       	
+										       	if(Author == ''){
+										       		alert("Author Can Not Be Null")
+										       		e.preventDefault();
+										       		return
+										       	} 
+										       	if(description == ''){
+										       		alert("Description Can Not Be Null")
+										       		e.preventDefault();
+										       		return
+										       	} 
+										       	
+												var datePattern = /^\d{2}-\d{2}-\d{4}$/;
+												if (!datePattern.test(publicationDate)) {
+													alert("Publication Date must be in the format dd-mm-yyyy!");
+													event.preventDefault(); // Prevent form submission
+													return;
+												}
+
+										        if(currentProduct.bookTitle !== bookTitle){
+										            formData.append('bookTitle',bookTitle);
+										        }
+										        if(currentProduct.pageNum !== PageNum){
+										            formData.append('pageNum',PageNum);
+										        }
+										        if(currentProduct.category.categoryName !== cate){
+										            formData.append('category',cate);
+										        }
+										        if(currentProduct.author !== Author){
+										            formData.append('author',Author);
+										        }
+										        if(image !== undefined){
+										            formData.append('image' , image);
+										        }
+										       	if(currentProduct.publicationDate!==publicationDate){
+										       		formData.append('publicationDate',publicationDate)
+										       	}
+										       	formData.append('Description',description)
+										        console.log(formData)
+										        fetch('http://localhost:8080/product/' + modelbookID , {
+										            method : "PUT",
+										            body : formData
+										        }).then((response) => {
+										        	/*  if (!response.ok) {
+										        	        throw new Error('Network response was not ok');
+										        	    } */
+										        	 return response.json();
+										        }).then((data) => {
+										        	if(data.message!=undefined){
+										        		alert(data.message)
+										        	}else{
+										        		window.location.href = "/bookManagement";
+										        	}
+										        })
+										       
+										    })
+								            
+							            }
+							    });
+							}
+						   	function enableEditFields() {
+						   		document.getElementById('bookAuthor').disabled = false
+								document.getElementById('publicationDate').disabled = false
+								document.getElementById('categorySelection').disabled = false
+								document.getElementById('Description').disabled = false
+								
+						        document.getElementById('uploadImg').disabled = false
+						        document.getElementById('bookTitle').disabled = false
+								document.getElementById('pagenum').disabled = false
+							
+							
+						    }
+						</script>
+
+
+					<script>
+							function validateData() {
+								var titleInput = document.getElementById("bookTitle");
+								var pageNumInput = document.getElementById("pagenum");
+								var authorInput = document.getElementById("bookAuthor");
+								var publicationDateInput = document.getElementById("publicationDate");
+								var imageInput = document.getElementById("uploadImg");
+						
+								var titleValue = titleInput.value.trim();
+								var pageNumValue = pageNumInput.value.trim();
+								var authorValue = authorInput.value.trim();
+								var publicationDateValue = publicationDateInput.value.trim();
+								var imageValue = imageInput.value;
+								
+								if (isNaN(pageNumValue)) {
+									alert("PageNum must be a number!");
+									event.preventDefault(); // Prevent form submission
+									return 
+								}
+								
+								// Check if any field is empty
+								if (titleValue === "" || pageNumValue === "" || authorValue === "" || publicationDateValue === "" || imageValue === "") {
+									alert("All fields are required!");
+									event.preventDefault(); // Prevent form submission
+									return;
+								}
+						
+								// Validate publication date format (dd-mm-yyyy)
+								var datePattern = /^\d{2}-\d{2}-\d{4}$/;
+								if (!datePattern.test(publicationDateValue)) {
+									alert("Publication Date must be in the format dd-mm-yyyy!");
+									event.preventDefault(); // Prevent form submission
+									return;
+								}
+							}
+</script>
+<script>getAllCategory();</script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Thu Vien Online || Login</title>
+<!-- base:css -->
+<link rel="stylesheet" href="vendors/typicons/typicons.css">
+<link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+<!-- endinject -->
+<!-- plugin css for this page -->
+<!-- End plugin css for this page -->
+<!-- inject:css -->
+<link rel="stylesheet" href="css/vertical-layout-light/style.css">
+<!-- endinject -->
+<link rel="shortcut icon" href="images/img.png" />
+	<style>
+		.myc {
+			position: absolute;
+			top: 13%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 46px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="container-scroller">
+		<div class="container-fluid page-body-wrapper full-page-wrapper">
+			<div class="content-wrapper d-flex align-items-center auth px-0">
+				<div class="row w-100 mx-0">
+					<div class="col-lg-4 mx-auto">
+						<div class="auth-form-light text-left py-5 px-4 px-sm-5">
+							<div class="brand-logo ">
+
+								<img class="myc" src="../../images/img.png" alt="logo">
+							</div>
+
+							<div id="login-form-wrap">
+								<h2 class="text-center">Login</h2>
+								<form id="login-form" action="/login" method="post">
+									<p th:if="${param.error}">Username or Password incorrect!</p>
+									<p th:if="${param.logout}">You have logouted!</p>
+									<p>
+										<input type="text" id="username" name="username"
+											placeholder="Username" required
+											class="form-control form-control-lg"><i
+											class="validation"><span></span><span></span></i>
+									</p>
+									<p>
+										<input type="password" id="password" name="password"
+											placeholder="Password" class="form-control form-control-lg"
+											required><i class="validation"><span></span><span></span></i>
+									</p>
+									<p>
+										<input type="submit" id="login"
+											class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
+											value="Login">
+									</p>
+								</form>
+								<div id="create-account-wrap">
+									<p>
+										Not a member? <a th:href="@{/register}">Create Account</a>
+									<p>
+								</div>
+								<!--create-account-wrap-->
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- content-wrapper ends -->
+		</div>
+		<!-- page-body-wrapper ends -->
+	</div>
+	<!-- container-scroller -->
+	<!-- base:js -->
+	<script src="vendors/js/vendor.bundle.base.js"></script>
+	<!-- endinject -->
+	<!-- inject:js -->
+	<script src="js/off-canvas.js"></script>
+	<script src="js/hoverable-collapse.js"></script>
+	<script src="js/template.js"></script>
+	<script src="js/settings.js"></script>
+	<script src="js/todolist.js"></script>
+	<!-- endinject -->
+</body>
+
+</html>
